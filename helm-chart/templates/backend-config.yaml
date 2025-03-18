@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  config.yml: |
+    auth:
+      local:
+        enabled: {{ .Values.backend.auth.local.enabled }}
+      openid:
+        enabled: {{ .Values.backend.auth.openid.enabled }}
+        providers:
+          {{ .Values.backend.auth.openid.name }}:
+            name: {{ .Values.backend.auth.openid.name }}
+            authurl: {{ .Values.backend.auth.openid.authurl }}
+            logouturl: {{ .Values.backend.auth.openid.logouturl }}
+            clientid: {{ .Values.backend.auth.openid.clientid }}

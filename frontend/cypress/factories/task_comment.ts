@@ -11,7 +11,7 @@ export class TaskCommentFactory extends Factory {
 		return {
 			id: '{increment}',
 			comment: faker.lorem.text(3),
-			author_id: 1,
+			or_id: 1,
 			task_id: 1,
 			created: now.toISOString(),
 			updated: now.toISOString()
